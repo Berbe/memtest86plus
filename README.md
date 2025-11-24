@@ -160,65 +160,67 @@ option consists of an option name, optionally followed by an `=` sign and
 one or more parameters, separated by commas. The following options are
 recognised:
 
-  * nosmp
-    * disables ACPI table parsing and the use of multiple CPU cores
-  * nobench
-    * disables the integrated memory benchmark
-  * nobigstatus
-    * disables the big PASS/FAIL pop-up status display
-  * nosm
-    * disables SMBUS/SPD parsing, DMI decoding and memory benchmark
-  * nomch
-    * disables memory controller configuration polling
-  * nopause
-    * skips the pause for configuration at startup
-  * keyboard=*type*
-    * where *type* is one of
-      * legacy
-      * usb
-      * both
-  * dark
-    * change the default background colour from blue to black
-  * screen.mode=*w*x*h* (EFI framebuffer only)
-    * where *w*x*h* is the preferred screen resolution (e.g. 1024x768)
-  * screen.mode=bios (EFI framebuffer only)
-    * uses the default screen resolution set by the UEFI BIOS
-  * screen.rhs-up (graphics mode only)
-    * rotates the display clockwise by 90 degrees
-  * screen.lhs-up (graphics mode only)
-    * rotates the display anti-clockwise by 90 degrees
-  * efidebug
-    * displays information about the EFI framebuffer
-  * usbdebug
-    * pauses after probing for USB keyboards
-  * usbinit=*mode*
-    * where *mode* is one of
-      * 1 = use the two-step init sequence for high speed devices
-      * 2 = add a second USB reset in the init sequence
-      * 3 = the combination of modes 1 and 2
-  * console=ttyS*x*,*y*
-    * activate serial/tty console output, where *x* is one of the following IO port
-      *  0 = 0x3F8
-      *  1 = 0x2F8
-      *  2 = 0x3E8
-      *  3 = 0x2E8
-    * and *y* is an optional baud rate to choose from the following list
-      * 9600
-      * 19200
-      * 38400
-      * 57600
-      * 115200 (default if not specified or invalid)
-      * 230400
-  * console=*x*,*y*
-    * activate MMIO UART console, where *x* is the MMIO stride (reg. width)
-      * mmio   = 8-bit MMIO
-      * mmio16 = 16-bit MMIO
-      * mmio32 = 32-bit MMIO
-    * and *y* is the MMIO address in hex. with `0x` prefix (eg: 0xFEDC9000)
-  * newline
-    * modifies the console to print a newline after every change to the frame buffer
-      * useful in logging over serial where an escape or newline is needed
-    * only used when using console/serial output
+* `nosmp`<br />
+  disables ACPI table parsing and the use of multiple CPU cores
+* `nobench`<br />
+  disables the integrated memory benchmark
+* `nobigstatus`<br />
+  disables the big PASS/FAIL pop-up status display
+* `nosm`<br />
+  disables SMBUS/SPD parsing, DMI decoding and memory benchmark
+* `nomch`<br />
+  disables memory controller configuration polling
+* `nopause`<br />
+  skips the pause for configuration at startup
+* `keyboard=<type>`<br />
+  where `type` is one of:
+  * `legacy`
+  * `usb`
+  * `both`
+* `dark`<br />
+  change the default background colour from blue to black
+* `screen.mode=<w>x<h>` (EFI framebuffer only)<br />
+  where `<w>x<h>` is the preferred screen resolution (e.g. `1024x768`)
+* `screen.mode=bios` (EFI framebuffer only)<br />
+  uses the default screen resolution set by the UEFI BIOS
+* `screen.rhs-up` (graphics mode only)<br />
+  rotates the display clockwise by 90 degrees
+* `screen.lhs-up` (graphics mode only)<br />
+  rotates the display anti-clockwise by 90 degrees
+* `efidebug`<br />
+  displays information about the EFI framebuffer
+* `usbdebug`<br />
+  pauses after probing for USB keyboards
+* `usbinit=<mode>`<br />
+  where `mode` is one of:
+  * `1`: use the two-step init sequence for high speed devices
+  * `2`: add a second USB reset in the init sequence
+  * `3`: the combination of modes `1` and `2`
+* `console=ttyS<x>,<y>`<br />
+  activate serial/tty console output, where `x` is one of the following IO port:
+  * `0`: 0x3F8
+  * `1`: 0x2F8
+  * `2`: 0x3E8
+  * `3`: 0x2E8
+
+  and `y` is an optional baud rate to choose from the following list:
+  * `9600`
+  * `19200`
+  * `38400`
+  * `57600`
+  * `115200` (default if not specified or invalid)
+  * `230400`
+* `console=<x>,<y>`<br />
+  activate MMIO UART console, where `x` is the MMIO stride (reg. width):
+  * `mmio`  : 8-bit MMIO
+  * `mmio16`: 16-bit MMIO
+  * `mmio32`: 32-bit MMIO
+
+  and `y` is the MMIO address in hex. with `0x` prefix (eg: `0xFEDC9000`)
+* `newline`<br />
+  modifies the console to print a newline after every change to the frame buffer
+  useful in logging over serial where an escape or newline is needed
+  only used when using console/serial output
 
 ## Keyboard Selection
 
